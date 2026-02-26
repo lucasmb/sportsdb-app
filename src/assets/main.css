@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #1d4ed8;
+  --color-secondary: #64748b;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-gray-50;
+}
+
+@media (prefers-color-scheme: dark) {
+  body.dark {
+    color-scheme: dark;
+  }
+}
