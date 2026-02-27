@@ -3,9 +3,9 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="min-h-screen">
+  <div class="bg-app-surface-muted text-app-text transition-colors duration-300">
     <!-- Header -->
-    <header class="w-full">
+    <header class="sticky w-full">
       <div class="flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <h1 class="text-2xl">SPORTSDB<span class="text-app-text">APP</span></h1>
       </div>
