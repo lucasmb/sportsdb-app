@@ -6,10 +6,12 @@ A Vue 3 SPA for listing and showing sports leagues and badges, built with Vite, 
 
 The project follows a clean, composable-based architecture:
 
-It fetches leaues from SportsDB api, and saves it in local memory to prevent repeated requests. on League card click we fetch the leagues badges and displey them in gallery modal.
+It fetches leagues from SportsDB api, and saves it in local memory to prevent repeated requests. on League card click we fetch the leagues badges and displey them in gallery modal.
 This API has limits on free tier so designed the App to be able to run the full api and bring all the sports list availbale.
 The free api does not provide pagination so it will be recommended to add pagination support for full api.
 
+### App URL
+- [Check the live site here](https://lucasmb.github.io/sportsdb-app)
 
 - **Vue 3 (Composition API)**: Leveraging `script setup` for concise and readable components.
 - **Pinia**: Centralized state management for league and badges data.
@@ -25,8 +27,8 @@ and persisiting its content in browser sessionStorage.
 For larger, production-grade projects, I'd recommend a server side caching solution
 
 ## AI
-Google Gemini AI was used for tests, styling and helping with some functions and transitions like modals and image gallery
-Also used for quick translations and refacotoring composables.
+Google Gemini AI was used for tests, styling and helping with some functions and css transitions like modals and image gallery
+Also used for quick translations and composables refactoring.
 
 ## Project Setup
 
