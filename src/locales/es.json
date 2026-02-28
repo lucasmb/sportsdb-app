@@ -1,0 +1,18 @@
+{
+  "app": {
+    "title": "Todas las Ligas",
+    "search": "Buscar ligas...",
+    "filterBySport": "Todos los Deportes",
+    "theme": {
+      "light": "Modo Claro",
+      "dark": "Modo Oscuro"
+    },
+    "noLeagues": "No se encontraron ligas.",
+    "noBadge": "No se encontraron escudos.",
+    "loading": "Cargando...",
+    "league": "Liga",
+    "sport": "Deporte",
+    "alternate": "Nombre Alternativo",
+    "close": "Cerrar"
+  }
+}

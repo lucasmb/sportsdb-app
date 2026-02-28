@@ -2,28 +2,7 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { useFetch } from '@/composables/useFetch'
 import { useSessionStorage } from '@/composables/useSessionStorage'
-
-export interface League {
-  idLeague: string
-  strLeague: string
-  strSport: string
-  strLeagueAlternate: string
-}
-
-export interface Season {
-  idSeason: string
-  strSeason: string
-  strBadge: string
-}
-
-interface LeaguesResponse {
-  countries?: League[]
-  leagues?: League[]
-}
-
-interface SeasonsResponse {
-  seasons?: Season[]
-}
+import type { League, Season, LeaguesResponse, SeasonsResponse } from '@/types/leagues'
 
 const BASE_API_URL = 'https://www.thesportsdb.com/api/v1/json/123'
 const SEARCH_LEAGUES_URL = `${BASE_API_URL}/search_all_leagues.php`

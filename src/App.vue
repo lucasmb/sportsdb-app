@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import ThemeLangSwitcher from './components/ThemeLangSwitcher.vue'
 </script>
 
 <template>
@@ -7,7 +8,11 @@ import { RouterView } from 'vue-router'
     <!-- Header -->
     <header class="sticky w-full">
       <div class="flex items-center justify-between mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <h1 class="text-2xl">SPORTSDB<span class="text-app-text">APP</span></h1>
+        <h1 class="text-2xl font-black text-app-primary">
+          SPORTSDB<span class="text-app-text ms-2">APP</span>
+        </h1>
+
+        <ThemeLangSwitcher />
       </div>
     </header>
   </div>

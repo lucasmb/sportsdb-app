@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { League } from '@/stores/leagues'
+import type { League } from '@/types/leagues'
 
 interface Props {
   league: League

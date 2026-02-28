@@ -1,0 +1,18 @@
+{
+  "app": {
+    "title": "All Leagues",
+    "search": "Search leagues...",
+    "filterBySport": "All Sports",
+    "theme": {
+      "light": "Light Mode",
+      "dark": "Dark Mode"
+    },
+    "noLeagues": "No leagues found.",
+    "noBadge": "No badge Available.",
+    "loading": "Loading...",
+    "league": "League",
+    "sport": "Sport",
+    "alternate": "Alternative Name",
+    "close": "Close"
+  }
+}
