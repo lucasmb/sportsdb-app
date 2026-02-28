@@ -16,14 +16,20 @@ const currentLeagueName = ref<string | null>(null)
 const seasons = ref<Season[]>([])
 const badgeLoading = ref(false)
 const searchQuery = ref('')
+const debouncedSearchQuery = ref('')
+let debounceTimer: ReturnType<typeof setTimeout> | null = null
+
 const selectedSport = ref('all_leagues')
 
 const filteredLeagues = computed(() => {
   if (!Array.isArray(leagueStore.leagues)) return []
   return leagueStore.leagues.filter((league) => {
     const matchesSearch =
-      league.strLeague.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
-      (league.strLeagueAlternate?.toLowerCase().includes(searchQuery.value.toLowerCase()) ?? false)
+      league.strLeague.toLowerCase().includes(debouncedSearchQuery.value.toLowerCase()) ||
+      (league.strLeagueAlternate
+        ?.toLowerCase()
+        .includes(debouncedSearchQuery.value.toLowerCase()) ??
+        false)
     const matchesSport =
       selectedSport.value === 'all_leagues' || league.strSport === selectedSport.value
     return matchesSearch && matchesSport
@@ -44,7 +50,31 @@ onMounted(() => {
 })
 
 watch(selectedSport, (newSport) => {
+  searchQuery.value = ''
   leagueStore.fetchLeagues(newSport)
+})
+
+/**
+ * added a watcher to debounce the search of leagues with timeouts
+ * altough it is not needed since we are not doing a server request
+ * it imporoves UI
+ */
+
+watch(searchQuery, (newVal) => {
+  if (debounceTimer) clearTimeout(debounceTimer)
+
+  // Clear immediately if empty
+  if (newVal === '') {
+    debouncedSearchQuery.value = ''
+    return
+  }
+
+  // Only search if length > 2
+  if (newVal.length > 2) {
+    debounceTimer = setTimeout(() => {
+      debouncedSearchQuery.value = newVal
+    }, 500)
+  }
 })
 </script>
 
