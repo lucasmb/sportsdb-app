@@ -34,7 +34,13 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Upload Artifacts
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy website with rsync
+        # if: github.ref == 'refs/heads/master'
+        uses: burnett01/rsync-deployments@5.2
         with:
-          path: dist
+          switches: -avzr --delete --chmod=D775,F664
+          path: dist/
+          remote_path: ${{ secrets.REMOTE_PATH }}
+          remote_host: ${{ secrets.SERVER_IP }}
+          remote_user: ${{ secrets.SERVER_USER }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}

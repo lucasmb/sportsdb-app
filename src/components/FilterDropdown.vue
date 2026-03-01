@@ -12,9 +12,12 @@ const model = defineModel<string>({ required: true })
 </script>
 
 <template>
-  <div class="w-full md:w-48">
+  <div class="w-full flex items-center">
+    <label for="sports-select">{{ t('app.sport') }} </label>
+
     <select
       v-model="model"
+      id="sports-select"
       class="w-full px-4 py-2 rounded-lg border border-app-border bg-app-surface text-app-text focus:ring-2 focus:ring-app-primary outline-none transition-all cursor-pointer"
     >
       <option value="all_leagues">{{ t('app.filterBySport') }}</option>

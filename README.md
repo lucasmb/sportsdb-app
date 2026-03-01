@@ -11,7 +11,7 @@ This API has limits on free tier so designed the App to be able to run the full 
 The free api does not provide pagination so it will be recommended to add pagination support for full api.
 
 ### App URL
-- [Check the live site here](https://lucasmb.github.io/sportsdb-app)
+- [Check the live site here](https://sportsapp.sabado.dev)
 
 - **Vue 3 (Composition API)**: Leveraging `script setup` for concise and readable components.
 - **Pinia**: Centralized state management for league and badges data.
@@ -32,6 +32,18 @@ Also used for quick translations and composables refactoring.
 
 ## Project Setup
 
+> [!IMPORTANT]
+>Projects was built using [Node 24 LTS](https://nodejs.org/en/download)
+>And uses [pnpm](https://pnpm.io/es/) as package manager
+> It's recommended to use Node >= 22 to run/build the project and pnpm through [Node corepack](https://pnpm.io/installation#using-corepack)
+>
+
+### Enable corepack and pnpm
+```sh
+corepack enable pnpm
+```
+
+### install deps
 ```sh
 pnpm install
 ```
